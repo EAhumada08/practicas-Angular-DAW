@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -27,5 +28,9 @@ export class LoginComponent {
       this.usuario.avatar="Foto",
       this.usuario.tipo = 2
 
+    }
+
+    login(){
+      this.isAuth = true
     }
 }
