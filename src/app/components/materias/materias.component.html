@@ -1,1 +1,29 @@
-<p>materias works!</p>
+<div>
+    <h4>Materias</h4>
+    <select name="" id="" (change)="getMateria($event)">
+        @for (materia of materias; track materia.id) {
+            <option value="{{materia.id}}" >{{materia.nombre}}</option>
+        }
+    </select>
+    
+    @if (isVisible) {
+        <button (click)="isVisible=false">Ocultar</button>
+        <table>
+            <thead>Materias</thead>
+            <tbody>
+                @for (materia of materias; track materia.id) {
+                    <tr>
+                        <td>{{materia.id}}</td>
+                        <td>{{materia.nombre}}</td>
+                    </tr>
+                }
+            </tbody>
+            
+        </table>    
+    }@else {
+        <button (click)="isVisible=true">Mostrar</button>
+    
+    }
+    
+</div>
+

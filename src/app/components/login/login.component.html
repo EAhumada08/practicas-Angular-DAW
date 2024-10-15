@@ -1,8 +1,13 @@
 
 <main>
     <header>
-        <h1>Bienvenido {{usuario.nombre}}</h1>
-        <button >Logout</button>
-        <button>LogIn</button>
+        @if (isAuth) {
+            <h1>Bienvenido {{usuario.nombre}}</h1>
+            <button >Logout</button>
+
+        }@else {
+            <button>LogIn</button>
+
+        }
     </header>
 </main>
