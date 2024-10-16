@@ -8,22 +8,33 @@
     
     @if (isVisible) {
         <button (click)="isVisible=false">Ocultar</button>
-        <table>
-            <thead>Materias</thead>
-            <tbody>
-                @for (materia of materias; track materia.id) {
-                    <tr>
-                        <td>{{materia.id}}</td>
-                        <td>{{materia.nombre}}</td>
-                    </tr>
-                }
-            </tbody>
+        <h1>Materias</h1>
+        <div class="table-container">
+            <table>
             
-        </table>    
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Materia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (materia of materias; track materia.id) {
+                        <tr>
+                            <td>{{materia.id}}</td>
+                            <td>{{materia.nombre}}</td>
+                        </tr>
+                    }
+                </tbody>
+                
+            </table>
+        </div>
+            
     }@else {
         <button (click)="isVisible=true">Mostrar</button>
     
     }
     
+    <app-nombre-input></app-nombre-input>
 </div>
 

@@ -1,25 +1,13 @@
 
 <main>
     <header>
-<<<<<<< HEAD
         @if (isAuth) {
             <h1>Bienvenido {{usuario.nombre}}</h1>
-            <button >Logout</button>
+            <button (click)="isAuth=false">Logout</button>
 
         }@else {
-            <button>LogIn</button>
+            <button (click)="isAuth=true">LogIn</button>
 
         }
-=======
-        <div *ngIf="isAuth; else elseBlock">
-            <h1>Bienvenido {{usuario.nombre}}</h1>
-            <button (click)="isAuth = false">Logout</button>
-        </div>
-        
-        <ng-template #elseBlock>
-            <button (click)="isAuth = true">Login</button>
-        </ng-template>
-            
->>>>>>> 9c6f5070c8c5b09f7664c444913d6da4571d0c3c
     </header>
 </main>

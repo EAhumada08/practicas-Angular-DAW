@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NombreInputComponent } from '../nombre-input/nombre-input.component';
 
 @Component({
   selector: 'app-materias',
   standalone: true,
-  imports: [],
+  imports: [NombreInputComponent],
   templateUrl: './materias.component.html',
   styleUrl: './materias.component.css'
 })

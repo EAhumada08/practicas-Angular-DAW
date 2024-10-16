@@ -15,11 +15,32 @@ div{
   gap: 10px;
 }
 
-table {
-  border: 1px solid black;
-
+thead{
+  text-align: center;
 }
 
-tr {
-  border: 1px solid black;
+.table-container{
+  width: auto;
+  height: auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #E2E2B6;
+  background-color: #03346E;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th{
+  border-bottom: 2px solid #E2E2B6;
+  background: #03346E;
+  color: white;
+} 
+td{
+  padding: 5px;
+  text-align: center;
+  border-bottom: 2px solid #E2E2B6;
+  background: #03346E;
+  color: white;
 }
