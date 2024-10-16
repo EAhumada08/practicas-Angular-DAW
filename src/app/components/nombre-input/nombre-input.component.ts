@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
   imports: [FormsModule],
   template: `
   <div>
-    <h2>Hola {{nombre}}</h2>
-    <input type="text" [(ngModel)]="nombre">
+    <h2>{{texto}}</h2>
+    <label for="text">Materia</label>
+    <input type="text" id="text" [(ngModel)]="texto">
+    <button [disabled]="!texto">Agregar</button>
   </div>
   `,
   styles: ``
 })
 export class NombreInputComponent {
-  nombre = 'Emanuel';
+  texto = '';
 }

@@ -36,5 +36,7 @@
     }
     
     <app-nombre-input></app-nombre-input>
+
+    <app-materia-detalles [materia]="materiaSeleccionada" (notify)="onNotify($event)"></app-materia-detalles>
 </div>
 
