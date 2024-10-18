@@ -5,9 +5,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
+  <div class="">
     <button (click)="updateCount(-1)">-</button>
     <span>{{count}}</span>
     <button (click)="updateCount(+1)">+</button>
+  </div>
   `,
   styles: ``
 })
