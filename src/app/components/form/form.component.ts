@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AuthServiceService } from '../../services/auth-service.service';
 
 @Component({
   selector: 'app-form',
@@ -42,7 +43,7 @@ export class FormComponent {
   navigator: Router = new Router();
 
   isInvalid = false;
-  isAdmin = true;
+  isAdmin = false;
   private formBuilder = new FormBuilder();
 
   materiasForm = this.formBuilder.group({
@@ -51,9 +52,14 @@ export class FormComponent {
     nivel: ['', Validators.required],
   })
 
-  constructor(){
+  constructor(private userService:AuthServiceService ){
     this.id = this.url.snapshot.params['id'];
     this.cod = this.url.snapshot.params['cod'];
+    let user = this.userService.getUser();
+
+    if(user.type ==2){
+      this.isAdmin = true;
+    }
   }
 
   irMaterias(){

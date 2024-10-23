@@ -1,0 +1,7 @@
+<p>Lista de usuarios</p>
+
+<ul>
+    @for (item of usersList.data; track $index) {
+        <li>{{item.first_name}}</li>
+    }
+</ul>

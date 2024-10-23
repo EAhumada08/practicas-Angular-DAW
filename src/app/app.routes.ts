@@ -5,6 +5,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { Page404Component } from './components/page-404/page-404.component';
 import { ProcesosComponent } from './components/procesos/procesos.component';
 import { FormComponent } from './components/form/form.component';
+import { UsersComponent } from './components/users/users.component';
 
 export const routes: Routes = [
     {
@@ -29,9 +30,15 @@ export const routes: Routes = [
             }
         ]
     },
+  
+    {
+        path: 'usuarios',
+        component: UsersComponent
+    },
     {
         path: "**",
         component: Page404Component,
+        pathMatch : 'full'
     },
     
 ];

@@ -2,10 +2,10 @@
     <header>
         @if (isAuth) {
             <h1>Bienvenido {{usuario.nombre}}</h1>
-            <button (click)="isAuth=false">Logout</button>
+            <button (click)="logOut()">Logout</button>
 
         }@else {
-            <button (click)="isAuth=true">LogIn</button>
+            <button (click)="login()">LogIn</button>
 
         }
     </header>
