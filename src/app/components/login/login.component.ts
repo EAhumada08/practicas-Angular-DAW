@@ -47,5 +47,6 @@ export class LoginComponent {
       this.usuario.avatar="";
       this.usuario.tipo = 0;
       this.userService.saveUser('',0)
+      console.log(this.userService.usuario)
     }
 }

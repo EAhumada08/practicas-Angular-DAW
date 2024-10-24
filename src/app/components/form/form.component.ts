@@ -14,22 +14,25 @@ import { AuthServiceService } from '../../services/auth-service.service';
       {{cod}}
     </p>
     <button (click)="irMaterias()">Materias</button>
-    <div [hidden]="!isAdmin" class="caja" style="width: 50%;">
-    <form [formGroup]="materiasForm" (submit) = 'guardar()'>
-        <label for="id">Id:</label><br>
-        <input type="text" formControlName="id" name="id" id="id"  [class]="{'missing':isInvalid}">
-        <br>
-        <label for="materia">Materia:</label><br>
-        <input type="text" formControlName="materia" name="materia" id="materia">
-        <br>
-        <label for="nivel">Nivel:</label><br>
-        <input type="text" formControlName="nivel" name="nivel" id="nivel">
-        <br>
-        <button type="submit" [disabled]="!materiasForm.valid">Guardar</button><br>
+    @if(isAdmin){
+      <div class="caja" style="width: 50%;">
+      <form [formGroup]="materiasForm" (submit) = 'guardar()'>
+          <label for="id">Id:</label><br>
+          <input type="text" formControlName="id" name="id" id="id"  [class]="{'missing':isInvalid}">
+          <br>
+          <label for="materia">Materia:</label><br>
+          <input type="text" formControlName="materia" name="materia" id="materia">
+          <br>
+          <label for="nivel">Nivel:</label><br>
+          <input type="text" formControlName="nivel" name="nivel" id="nivel">
+          <br>
+          <button type="submit" [disabled]="!materiasForm.valid">Guardar</button><br>
+  
+      </form>
+  
+  </div>
 
-    </form>
-
-</div>
+    }
   `,
   styles: `
   .missing{
@@ -56,8 +59,8 @@ export class FormComponent {
     this.id = this.url.snapshot.params['id'];
     this.cod = this.url.snapshot.params['cod'];
     let user = this.userService.getUser();
-
-    if(user.type ==2){
+    console.log(user)
+    if(user.type == 2){
       this.isAdmin = true;
     }
   }
